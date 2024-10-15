@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">CW1-MP3Player</string>
+    <string name="settings">Settings</string>
+    <string name="speed_setting">"Playback Speed: "</string>
+    <string name="bg_setting">Background Colour</string>
+    <string name="no_song">Waiting for a song…</string>
+    <string name="song">Current Song</string>
+    <string name="default_progress">0:00/0:00</string>
+    <string name="default_speed">Speed: 100%</string>
+    <string-array name="bg_strings">
+        <item>Choose Background Colour</item>
+        <item>Tangerine</item>
+        <item>Aqua</item>
+        <item>Lime</item>
+    </string-array>
+</resources>
