@@ -1,0 +1,65 @@
+<resources>
+    <string name="app_name">CW2-GeoTracker</string>
+    <string name="placeholder">Placeholder Text</string>
+    <string name="reminder_text">Reminder Text</string>
+    <string name="reminder_hint">Eg: Get Milk</string>
+    <string name="reminder_location">Reminder Location</string>
+    <string name="reminder_current">Current Location</string>
+    <string name="reminder_custom">Choose…</string>
+    <string name="reminder_tag">Reminder Tag</string>
+    <string name="delete_message">Delete this reminder?</string>
+    <string name="create_message">Place a new reminder here?</string>
+    <string name="delete_yes">Yes</string>
+    <string name="delete_no">No</string>
+    <string name="confirmation">OK</string>
+    <string name="reminder_help_message">To create a new reminder, long press a location on the map.</string>
+    <string name="notification_message">"%1$s (and %2$d more)"</string>
+    <string name="setting_bg_text">Allow Full Location Tracking</string>
+    <string name="metric_distance">"Total Distance: %1$.2fkm"</string>
+    <string name="metric_time">"Total Time: %1$02d:%2$02d:%3$02d"</string>
+    <string name="metric_reminders">"Reminders Sent: %1$d"</string>
+    <string name="metric_speed">"Average Speed: %1$.2fm/s"</string>
+    <string name="metric_top_speed">"Top Speed: %1$.2fm/s"</string>
+    <string name="metric_tab_title">Daily Metrics</string>
+    <string name="reminder_tab_title">Reminders</string>
+    <string name="exercise_title">Exercise Mode</string>
+    <string name="exercise_start">Start New Exercise</string>
+    <string name="exercise_stop">Stop Current Exercise</string>
+    <string name="exercise_pause">(Un)Pause Current Exercise</string>
+    <string name="exercise_past">View Past Exercises</string>
+    <string name="exercise_status_on">Exercise in Progress</string>
+    <string name="exercise_status_off">Not Currently Exercising</string>
+    <string name="exercise_status_pause">Exercise Paused</string>
+    <string name="exercise_error_already_on">Please finish your current exercise before starting a new one.</string>
+    <string name="exercise_error_service_off">The tracking service must be on to exercise.</string>
+    <string name="exercise_error_not_on">You are not currently exercising.</string>
+    <string name="map_distance">"Distance: %1$.2fkm"</string>
+    <string name="map_time">"Time: %1$02d:%2$02d:%3$02d"</string>
+    <string name="map_speed">"Speed: %1$.2fm/s"</string>
+    <string name="map_distance_zero">"Distance: 0km"</string>
+    <string name="map_time_zero">"Time: 00:00:00"</string>
+    <string name="map_speed_zero">"Speed: 0m/s"</string>
+    <string name="exercise_tab">Past Exercises</string>
+    <string name="exercise_name">Exercise Name</string>
+    <string name="exercise_hint">Eg: Daily Jog</string>
+    <string name="exercise_type">Exercise Type</string>
+    <string name="metric_error_switch">You cannot turn this off while exercising.</string>
+    <string name="exercise_weather">Weather</string>
+    <string name="exercise_temperature">Temperature</string>
+    <string name="exercise_notes">Notes</string>
+    <string name="exercise_type_best">Your best performance for this category yet!</string>
+    <string name="exercise_type_not_best">There are %1$d better exercises in this category.</string>
+    <string-array name="reminder_taglist">
+        <item>default</item>
+        <item>important</item>
+        <item>shop</item>
+        <item>people</item>
+        <item>exercise</item>
+        <item>fun</item>
+    </string-array>
+    <string-array name="exercise_typelist">
+        <item>walk</item>
+        <item>run</item>
+        <item>cycle</item>
+    </string-array>
+</resources>

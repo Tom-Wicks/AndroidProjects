@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.Exercise.ExerciseInfoActivity">
+
+    <TextView
+        android:id="@+id/exerciseInfoNameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/placeholder"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/exerciseInfoDateText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/placeholder"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/exerciseInfoNameText" />
+
+    <View
+        android:id="@+id/exerciseInfoDivider"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_marginTop="4dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintTop_toBottomOf="@+id/exerciseInfoDateText"
+        tools:layout_editor_absoluteX="63dp" />
+
+    <ScrollView
+        android:id="@+id/exerciseInfoScroller"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/exerciseInfoDivider" >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/exerciseInfoSublayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/exerciseInfoDistanceText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/placeholder"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                app:layout_constraintEnd_toStartOf="@+id/exerciseInfoTimeText"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/exerciseInfoTimeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/placeholder"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/exerciseInfoDistanceText"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/exerciseInfoAvgSpeedText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/placeholder"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                app:layout_constraintEnd_toStartOf="@+id/exerciseInfoTopSpeedText"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/exerciseInfoDistanceText" />
+
+            <TextView
+                android:id="@+id/exerciseInfoTopSpeedText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/placeholder"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/exerciseInfoAvgSpeedText"
+                app:layout_constraintTop_toBottomOf="@id/exerciseInfoTimeText" />
+
+            <org.osmdroid.views.MapView
+                android:id="@+id/pathMap"
+                android:layout_width="0dp"
+                android:layout_height="300dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/exerciseInfoAvgSpeedText" />
+
+            <TextView
+                android:id="@+id/exerciseInfoTypeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:text="@string/exercise_type"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/pathMap" />
+
+            <ImageView
+                android:id="@+id/exerciseInfoTypeIcon"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toEndOf="@+id/exerciseInfoTypeText"
+                app:layout_constraintTop_toBottomOf="@+id/pathMap"
+                app:srcCompat="@drawable/baseline_directions_walk_24" />
+
+            <TextView
+                android:id="@+id/exerciseInfoTypeComparisonText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/exercise_type_best"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/exerciseInfoTypeIcon"
+                app:layout_constraintTop_toBottomOf="@+id/pathMap" />
+
+            <TextView
+                android:id="@+id/exerciseInfoWeatherText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="48dp"
+                android:text="@string/exercise_weather"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/exerciseInfoTypeText" />
+
+            <ImageView
+                android:id="@+id/exerciseInfoWeatherClearIcon"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="32dp"
+                app:layout_constraintStart_toEndOf="@+id/exerciseInfoWeatherText"
+                app:layout_constraintTop_toBottomOf="@id/exerciseInfoTypeText"
+                app:srcCompat="@drawable/baseline_wb_sunny_24" />
+
+            <ImageView
+                android:id="@+id/exerciseInfoWeatherWindyIcon"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="32dp"
+                app:layout_constraintStart_toEndOf="@id/exerciseInfoWeatherClearIcon"
+                app:layout_constraintTop_toBottomOf="@id/exerciseInfoTypeText"
+                app:srcCompat="@drawable/baseline_air_24" />
+
+            <ImageView
+                android:id="@+id/exerciseInfoWeatherRainyIcon"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="32dp"
+                app:layout_constraintStart_toEndOf="@id/exerciseInfoWeatherWindyIcon"
+                app:layout_constraintTop_toBottomOf="@id/exerciseInfoTypeText"
+                app:srcCompat="@drawable/baseline_water_drop_24" />
+
+            <ImageView
+                android:id="@+id/exerciseInfoWeatherStormyIcon"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="32dp"
+                app:layout_constraintStart_toEndOf="@id/exerciseInfoWeatherRainyIcon"
+                app:layout_constraintTop_toBottomOf="@id/exerciseInfoTypeText"
+                app:srcCompat="@drawable/baseline_thunderstorm_24" />
+
+            <RadioGroup
+                android:id="@+id/exerciseInfoWeatherGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toEndOf="@id/exerciseInfoWeatherText"
+                app:layout_constraintTop_toBottomOf="@id/exerciseInfoWeatherClearIcon">
+
+                <RadioButton
+                    android:id="@+id/exerciseInfoWeatherClearButton"
+                    android:layout_width="72dp"
+                    android:layout_height="wrap_content" />
+
+                <RadioButton
+                    android:id="@+id/exerciseInfoWeatherWindyButton"
+                    android:layout_width="72dp"
+                    android:layout_height="wrap_content" />
+
+                <RadioButton
+                    android:id="@+id/exerciseInfoWeatherRainyButton"
+                    android:layout_width="72dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <RadioButton
+                    android:id="@+id/exerciseInfoWeatherStormyButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/exerciseInfoTempText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:layout_weight="1"
+                android:text="@string/exercise_temperature"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/exerciseInfoWeatherGroup" />
+
+            <ImageView
+                android:id="@+id/exerciseInfoTempColdIcon"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toEndOf="@id/exerciseInfoTempText"
+                app:layout_constraintTop_toBottomOf="@id/exerciseInfoWeatherGroup"
+                app:srcCompat="@drawable/baseline_ac_unit_24" />
+
+            <ImageView
+                android:id="@+id/exerciseInfoTempNeutralIcon"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toEndOf="@id/exerciseInfoTempColdIcon"
+                app:layout_constraintTop_toBottomOf="@id/exerciseInfoWeatherGroup"
+                app:srcCompat="@drawable/baseline_thermostat_24" />
+
+            <ImageView
+                android:id="@+id/exerciseInfoTempHotIcon"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toEndOf="@id/exerciseInfoTempNeutralIcon"
+                app:layout_constraintTop_toBottomOf="@id/exerciseInfoWeatherGroup"
+                app:srcCompat="@drawable/baseline_local_fire_department_24" />
+
+            <RadioGroup
+                android:id="@+id/exerciseInfoTempGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toEndOf="@id/exerciseInfoTempText"
+                app:layout_constraintTop_toBottomOf="@id/exerciseInfoTempColdIcon">
+
+                <RadioButton
+                    android:id="@+id/exerciseInfoTempColdButton"
+                    android:layout_width="72dp"
+                    android:layout_height="wrap_content" />
+
+                <RadioButton
+                    android:id="@+id/exerciseInfoTempNeutralButton"
+                    android:layout_width="72dp"
+                    android:layout_height="wrap_content" />
+
+                <RadioButton
+                    android:id="@+id/exerciseInfoTempHotButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/exerciseInfoNotesText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="18dp"
+                android:text="@string/exercise_notes"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/exerciseInfoTempGroup" />
+
+            <EditText
+                android:id="@+id/exerciseInfoNotesEdit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="8dp"
+                android:ems="10"
+                android:gravity="start|top"
+                android:inputType="textMultiLine"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/exerciseInfoNotesText" />
+
+            <ImageButton
+                android:id="@+id/exerciseInfoNotesSaveButton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginBottom="16dp"
+                android:adjustViewBounds="false"
+                android:cropToPadding="false"
+                android:onClick="onNotesSaveClick"
+                android:scaleX="2"
+                android:scaleY="2"
+                android:src="@drawable/baseline_save_24"
+                app:layout_constraintBottom_toTopOf="@+id/exerciseInfoNotesEdit"
+                app:layout_constraintStart_toEndOf="@+id/exerciseInfoNotesText" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
