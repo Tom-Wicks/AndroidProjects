@@ -2,8 +2,12 @@ package com.example.cw2_geotracker.Activities;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
+import android.Manifest;
 import android.app.AlertDialog;
 import android.content.ComponentName;
 import android.content.Context;
@@ -11,6 +15,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.LayerDrawable;
 import android.os.Bundle;
@@ -77,6 +82,16 @@ public class MainActivity extends AppCompatActivity implements LocationCallback 
         //Before inflating view
         setContentView(R.layout.activity_main);
         tagUtility = new TagUtility(this);
+
+        //Check permissions
+        if (ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                == PackageManager.PERMISSION_DENIED) {
+            ActivityCompat.requestPermissions(MainActivity.this, new String[] {Manifest.permission.WRITE_EXTERNAL_STORAGE}, 101);
+        }
+        if (ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.ACCESS_FINE_LOCATION)
+                == PackageManager.PERMISSION_DENIED) {
+            ActivityCompat.requestPermissions(MainActivity.this, new String[] {Manifest.permission.ACCESS_FINE_LOCATION}, 102);
+        }
 
         resultGet = false;
         //Result launcher, so reminders can display location
@@ -347,6 +362,16 @@ public class MainActivity extends AppCompatActivity implements LocationCallback 
             findViewById(R.id.mapDistanceText).setVisibility(View.INVISIBLE);
             findViewById(R.id.mapTimeText).setVisibility(View.INVISIBLE);
             findViewById(R.id.mapSpeedText).setVisibility(View.INVISIBLE);
+        }
+    }
+
+    //Reload on permissions granted
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            recreate();
         }
     }
 }
